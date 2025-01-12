@@ -34,7 +34,6 @@ btnPedir.addEventListener('click', () => {
     
     crearCarta(carta, divCartasJugador)
 
-    
     if ( puntosJugador > 21 ) {
         console.warn('Lo siento mucho, perdiste');
         btnPedir.disabled   = true;
