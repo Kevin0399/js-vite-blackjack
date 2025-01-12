@@ -34,7 +34,19 @@ btnPedir.addEventListener('click', () => {
     
     crearCarta(carta, divCartasJugador)
 
+    
+    if ( puntosJugador > 21 ) {
+        console.warn('Lo siento mucho, perdiste');
+        btnPedir.disabled   = true;
+        btnDetener.disabled = true;
+        turnoComputadora( puntosJugador );
 
+    } else if ( puntosJugador === 21 ) {
+        console.warn('21, genial!');
+        btnPedir.disabled   = true;
+        btnDetener.disabled = true;
+        turnoComputadora( puntosJugador );
+    }
     btnDetener.disabled = false;
 });
 
@@ -44,6 +56,8 @@ btnDetener.addEventListener('click', () => {
     btnDetener.disabled = true;
 
     turnoComputadora( puntosJugador, puntosHTML[1], divCartasComputadora, deck );
+
+    
 });
 
 btnNuevo.addEventListener('click', () => {
